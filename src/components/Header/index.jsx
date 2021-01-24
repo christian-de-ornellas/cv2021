@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Typography, makeStyles, Button } from '@material-ui/core';
+import { Grid, Container, Typography, makeStyles, Button, Hidden } from '@material-ui/core';
 import SrcAvatar from '../../assets/avatar.png';
 
 const useStyles = makeStyles({
@@ -9,7 +9,9 @@ const useStyles = makeStyles({
   },
   avatarCircle: {
     borderRadius: '10%',
+    maxWidth: '80%',
   },
+  shadowNone: { boxShadow: 'none' },
 });
 
 function Header() {
@@ -18,12 +20,15 @@ function Header() {
   return (
     <Container className={classes.root}>
       <Grid container justify="center" alignItems="center">
-        <Grid item justify="center" xs={12} sm={12} md={6} lg={6} xl={6}>
-          <img className={classes.avatarCircle} width="450" alt="Christian" src={SrcAvatar} />
-        </Grid>
+        <Hidden only={['xs', 'sm']}>
+          <Grid item justify="center" xs={12} sm={12} md={6} lg={6} xl={6}>
+            <img className={classes.avatarCircle} alt="Christian" src={SrcAvatar} />
+          </Grid>
+        </Hidden>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          <Typography variant="h3" component="h3">
-            Christian Possidonio 👨🏻‍💻 Software Developer
+          <Typography variant="h4" component="h4">
+            Christian Possidonio 👨🏻‍💻 <br />
+            Software Developer
           </Typography>
 
           <br />
@@ -39,7 +44,7 @@ function Header() {
           <Button
             variant="contained"
             color="secondary"
-            className={classes.topBar}
+            className={classes.shadowNone}
             onClick={() => {
               window.location.href = 'https://docs.google.com/document/d/1kwJsRjsvaXI3JNWC0XXSLUxOJlTsz_l70ksJSCBuIwo/edit?usp=sharing';
             }}
