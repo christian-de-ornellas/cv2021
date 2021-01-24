@@ -1,25 +1,18 @@
 import React from 'react';
-import { createMuiTheme, ThemeProvider, useMediaQuery, CssBaseline } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Home from './pages/Home';
 
 function App() {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: light)');
-
-  const theme = React.useMemo(
-    () =>
-      createMuiTheme({
-        palette: {
-          type: prefersDarkMode ? 'dark' : 'light',
-          primary: {
-            main: '#fbc531',
-          },
-          secondary: {
-            main: '#e4e450',
-          },
-        },
-      }),
-    [prefersDarkMode]
-  );
+  createMuiTheme({
+    palette: {
+      primary: {
+        main: '#fbc531',
+      },
+      secondary: {
+        main: '#e4e450',
+      },
+    },
+  });
 
   return (
     <ThemeProvider theme={theme}>

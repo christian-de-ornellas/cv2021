@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 const useStyles = makeStyles({
   root: {
     height: '100vh',
+    background: '#f3f2ef',
   },
 });
 
