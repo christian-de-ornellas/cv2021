@@ -3,7 +3,7 @@ import { createMuiTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Home from './pages/Home';
 
 function App() {
-  createMuiTheme({
+  const theme = createMuiTheme({
     palette: {
       primary: {
         main: '#fbc531',
