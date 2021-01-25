@@ -27,7 +27,7 @@ function Header() {
         </Hidden>
         <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <Typography variant="h4" component="h4">
-            Christian Possidonio 👨🏻‍💻 <br />
+            Christian Possidonio <Hidden only={['xs', 'sm']}>👨🏻‍💻</Hidden> <br />
             Software Developer
           </Typography>
 
